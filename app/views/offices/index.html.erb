@@ -1,2 +1,19 @@
-<h1>Offices#index</h1>
-<p>Find me in app/views/offices/index.html.erb</p>
+<h1>Birou offices</h1>
+
+<div>
+  <% if @offices.nil? %>
+    <p> No offices found </p>
+  <% else %>
+    <% @offices.each do |office| %>
+       <%= link_to office_path(office) do %>
+        <div class="card-product">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos">
+          <h2> <%= office.name %> </h2>
+          <p> <%= office.description %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
