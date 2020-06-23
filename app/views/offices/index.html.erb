@@ -1,6 +1,6 @@
 <h1>Birou offices</h1>
 
-<div>
+<div class="results">
   <% if @offices.nil? %>
     <p> No offices found </p>
   <% else %>
@@ -9,8 +9,9 @@
         <div class="card-product">
           <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
           <div class="card-product-infos">
-          <h2> <%= office.name %> </h2>
-          <p> <%= office.description %></p>
+            <h2> <%= office.name %> </h2>
+            <p> <%= office.address %></p>
+            <p> <%= office.description %></p>
           </div>
         </div>
       <% end %>
