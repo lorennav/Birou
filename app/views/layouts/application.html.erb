@@ -18,13 +18,17 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <div  class="navbar-container">
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-6" >
-          <%= yield %>
+    <% if action_name == 'home' && controller_name == 'pages' %>
+      <%= yield %>
+    <% else %>
+      <div class="navbar-container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-6" >
+            <%= yield %>
+          </div>
         </div>
       </div>
-    </div>
-
+    <% end %>
+    <%= render 'shared/footer' %>
   </body>
 </html>
