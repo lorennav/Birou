@@ -1,0 +1,20 @@
+.jumbotron {
+  background-color: #ff6f5926 !important;
+}
+.jumbotron h1{
+  margin-bottom: 30px;
+  color: #201E1F;
+}
+.item {
+  width: 100%;
+  padding-right: 50px;
+}
+
+.container .jumbo {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container .jumbo>div {
+  flex: 0 50%;
+}
