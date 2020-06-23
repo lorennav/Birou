@@ -10,10 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_23_135819) do
+ActiveRecord::Schema.define(version: 2020_06_23_170156) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.bigint "office_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "category"
+    t.bigint "user_id"
+    t.index ["office_id"], name: "index_bookings_on_office_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "offices", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.text "description"
+    t.integer "price"
+    t.string "photo"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "owner_id"
+    t.index ["owner_id"], name: "index_offices_on_owner_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,25 +52,7 @@ ActiveRecord::Schema.define(version: 2020_06_23_135819) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "bookings", force: :cascade do |t|
-    t.datetime "start_date"
-    t.datetime "end_date"
-    t.bigint "office_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "category"
-    t.index ["office_id"], name: "index_bookings_on_office_id"
-  end
-
-  create_table "offices", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.text "description"
-    t.integer "price"
-    t.string "photo"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   add_foreign_key "bookings", "offices"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "offices", "users", column: "owner_id"
 end
