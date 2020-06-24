@@ -6,7 +6,7 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-      <div class="row justify-content-center">
+      <div class="row">
         <div class="col-12 col-lg-6" >
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
@@ -31,9 +31,9 @@
                   </div>
               </li>
             <% else %>
-              <li class="nav-item">
+              <li class="nav-item active login">
                 <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-                <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
+                <%= link_to "SignUp", new_user_registration_path, class: "nav-link" %>
               </li>
             <% end %>
             </ul>
