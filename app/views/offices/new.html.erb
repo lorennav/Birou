@@ -1,10 +1,11 @@
 <div class="new-office">
-<h1>Do you have a space or a cowork to rent?</h1>
+<h2>Do you have a space or a cowork to rent?</h2>
 <%= simple_form_for @office do |f| %>
   <%= f.input :name %>
   <%= f.input :address %>
   <%= f.input :description %>
   <%= f.input :price %>
+  <%= f.input :photo, as: :file %>
   <%= f.button :submit %>
 <% end %>
 </div>

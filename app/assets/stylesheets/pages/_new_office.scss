@@ -1,8 +1,20 @@
 .new-office {
-  margin: 50px 0px;
+  margin: 60px 0px;
 }
 
 .btn {
+  border-radius: 8px;
+  background-color: #FFEAE6;
+  color: #211E20;
+
+  &:hover {
+   background-color: white;
+   border-color: #FFEAE6;
+   opacity: 0.8;
+  }
+}
+
+#button {
   border-radius: 8px;
   background-color: #FFEAE6;
   color: #211E20;
