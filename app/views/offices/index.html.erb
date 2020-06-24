@@ -1,6 +1,11 @@
-<div class="container">
 
-<h1>Offices near <%= params[:search] %></h1>
+
+<div class="container">
+<% if params[:search] == "" %>
+  <h2>Amazing offices </h2>
+  <% else %>
+  <h2>Amazing offices near <%= params[:search].capitalize  %></h2>
+<% end %>
 
 <div class="results">
   <% if @offices.nil? %>
