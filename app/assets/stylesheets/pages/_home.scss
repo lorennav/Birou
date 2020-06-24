@@ -1,6 +1,9 @@
 // Specific CSS for your home-page
 body {
   background-color: white;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 h2 {
@@ -8,4 +11,8 @@ h2 {
   margin-bottom: 30px;
   font-size: 48px;
   color: #216869;
+}
+
+.navbar-container {
+  flex: 1;
 }
