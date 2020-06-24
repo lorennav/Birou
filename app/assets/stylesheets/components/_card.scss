@@ -5,6 +5,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .card-product img {
@@ -29,4 +30,13 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.card-product:hover{
+  transform: scale(1.1);
+}
+
+.results a {
+  text-decoration: none;
+  color: black;
 }

@@ -1,4 +1,11 @@
 // Specific CSS for your home-page
-body{
+body {
   background-color: white;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.navbar-container {
+  flex: 1;
 }
