@@ -1,4 +1,6 @@
-<h1>Birou offices</h1>
+<div class="container">
+
+<h1>Offices near <%= params[:search] %></h1>
 
 <div class="results">
   <% if @offices.nil? %>
@@ -18,3 +20,5 @@
     <% end %>
   <% end %>
 </div>
+</div>
+
