@@ -2,6 +2,7 @@
   justify-content: space-between;
   background: white;
   opacity: 0.9;
+  margin-bottom: 80px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,12 +14,16 @@
 }
 
 .navbar-lewagon .nav-item {
-  padding-right: 25px;
+  padding-right: 80px;
   font-size: 18px;
+  display: inherit;
 }
-.navbar-lewagon .nav-item:hover {
-  border-bottom: 2px solid black;
-  transition: linear .3s;
-  margin-bottom: -10px;
+
+.nav-item .dropdown {
+  padding-right: 60px;
+}
+
+.navbar-container {
+  flex: 1;
 }
 

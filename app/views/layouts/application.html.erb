@@ -19,7 +19,9 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <% if action_name == 'home' && controller_name == 'pages' %>
+    <% if action_name == 'home' && controller_name == 'pages' || action_name == 'index' && controller_name == 'offices' %>
+      <%= yield %>
+    <% elsif action_name == 'index' && controller_name == 'offices' %>
       <%= yield %>
     <% else %>
       <div class="navbar-container">
