@@ -9,7 +9,7 @@
     <% @offices.each do |office| %>
        <%= link_to office_path(office) do %>
         <div class="card-product">
-          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <%= cl_image_tag office.photo.key %>
           <div class="card-product-infos">
             <h2> <%= office.name %> </h2>
             <p> <%= office.address %></p>
