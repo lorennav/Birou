@@ -9,6 +9,7 @@ class OfficesController < ApplicationController
   end
 
   def show
+    @office = Office.find(params[:id])
   end
 
   def new
