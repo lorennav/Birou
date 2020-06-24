@@ -1,10 +1,10 @@
 
 
 <div class="container">
-<% if params[:search] == "" %>
+<% if params[:search] == "" || params[:search].nil? %>
   <h2>Amazing offices </h2>
   <% else %>
-  <h2>Amazing offices near <%= params[:search].capitalize  %></h2>
+  <h2>Amazing offices <%= "near #{params[:search].capitalize}" %></h2>
 <% end %>
 
 <div class="results">
