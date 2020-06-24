@@ -15,10 +15,14 @@
 .navbar-lewagon .nav-item {
   padding-right: 25px;
   font-size: 18px;
+  display: inherit;
 }
 .navbar-lewagon .nav-item:hover {
   border-bottom: 2px solid black;
   transition: linear .3s;
   margin-bottom: -10px;
+}
+.navbar-container {
+  flex: 1;
 }
 
