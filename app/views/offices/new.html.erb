@@ -1,2 +1,10 @@
-<h1>Offices#new</h1>
-<p>Find me in app/views/offices/new.html.erb</p>
+<div class="new-office">
+<h1>Do you have a space or a cowork to rent?</h1>
+<%= simple_form_for @office do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.button :submit %>
+<% end %>
+</div>

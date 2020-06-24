@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  width: 600px;
 }
 
 .card-product img {
@@ -39,8 +40,4 @@
 .results a {
   text-decoration: none;
   color: black;
-}
-
-.container {
-  flex: 1;
 }
