@@ -4,7 +4,7 @@ class OfficesController < ApplicationController
     if params[:search].nil? || params[:search] == ""
       @offices = Office.all
     else
-      @offices = Office.where(address: params[:search])
+      @offices = Office.where("address ILIKE ?", "%#{params[:search]}%")
     end
   end
 
