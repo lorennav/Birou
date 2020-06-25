@@ -1,0 +1,8 @@
+<h1>Book <%= @office.name %></h1>
+
+<%= simple_form_for [@office, @booking],:url => office_bookings_path(@office), :method => :POST do |f| %>
+  <%= f.input :start_date, as: :string, input_html: { class: "date-picker" } %>
+  <%= f.input :end_date, as: :string, input_html: { class: "date-picker" } %>
+  <%= f.input :category, :collection => %w[Visit Rent] %>
+  <%= f.button :submit %>
+<% end %>
