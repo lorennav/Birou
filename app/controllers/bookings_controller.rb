@@ -8,15 +8,17 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @office = Office.find(params[:office_id])
-    @category = params["booking"]["category"]
-    @user = current_user
-    booking = Booking.new(start_date: Time.now, end_date: Time.now + 3 ,office: @office, category: @category, user: @user)
+    office = Office.find(params[:office_id])
+    category = params["booking"]["category"]
+    user = current_user
+    start_date = params[:booking][:start_date]
+    end_date = params[:booking][:end_date]
+    booking = Booking.new(start_date: start_date, end_date: end_date, office: office, category: category, user: user )
 
     if booking.save
-      redirect_to @office
+      redirect_to office
     else
-      raise
+      redirect_to new_office_booking_path(office)
     end
   end
 
@@ -24,10 +26,6 @@ class BookingsController < ApplicationController
  # "commit"=>"Create Booking",
  # "office_id"=>"44"
 
-  #  "start_date(2i)"=>"6",
-  #  "start_date(3i)"=>"25",
-  #  "start_date(4i)"=>"10",
-  #  "start_date(5i)"=>"53",
 
   def edit
   end

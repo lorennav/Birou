@@ -6,8 +6,8 @@
         <p></p>
 
         <%= simple_form_for [@office, @booking],:url => office_bookings_path, :method => :POST do |f| %>
-          <%= f.input :start_date %>
-          <%= f.input :end_date %>
+          <%= f.input :start_date, as: :string, input_html: { class: "date-picker" } %>
+          <%= f.input :end_date, as: :string, input_html: { class: "date-picker" } %>
           <%= f.input :category, :collection => %w[Visit Rent] %>
           <%= f.button :submit %>
         <% end %>
