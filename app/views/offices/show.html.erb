@@ -52,17 +52,18 @@
   </div>
   <div class="flex-child green">
     <!-- booking form -->
-
+    <div class="booking-form">
     <% if user_signed_in? %>
       <% unless current_user == @office.owner %>
       <%= render 'bookings/new_booking_form' %>
       <% end %>
     <% else %>
       <div class="nav-item active login">
-        <h4>Sign in to book this place</h4>
-        <%= link_to "Login", new_user_session_path, class: "nav-link btn btn-primary" %>
-        <%= link_to "SignUp", new_user_registration_path, class: "nav-link btn btn-primary" %>
+        <h3>Sign in to book this place</h3>
+          <%= link_to "Login", new_user_session_path, class: "nav-link btn btn-on-show" %>
+          <%= link_to "SignUp", new_user_registration_path, class: "nav-link btn btn-on-show" %>
       </div>
     <% end %>
+    </div>
   </div>
 </div>
