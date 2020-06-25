@@ -14,11 +14,7 @@
   <body>
 
     <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
+    
     <% if action_name == 'home' && controller_name == 'pages' || action_name == 'index' && controller_name == 'offices' %>
       <%= yield %>
     <% elsif action_name == 'index' && controller_name == 'offices' %>
@@ -32,6 +28,10 @@
         </div>
       </div>
     <% end %>
+    
+    <%= render 'shared/flashes' %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= render 'shared/footer' %>
 
   </body>
