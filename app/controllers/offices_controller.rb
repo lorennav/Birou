@@ -1,26 +1,18 @@
 class OfficesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:show, :index]
+  skip_before_action :authenticate_user!, only: %i[show index]
 
   def index
-
     if params[:search].nil? || params[:search] == ""
       @offices = Office.geocoded
-      @markers = @offices.map do |office|
-      {
-        lat: office.latitude,
-        lng: office.longitude
-      }
-      end
-
     else
-      @offices = Office.geocoded.where("address ILIKE ?", "%#{params[:search]}%")
-      @markers = @offices.map do |office|
+      @offices = Office.search_by_full_name(params[:search])
+      # @offices = Office.geocoded.where("address ILIKE ?", "%#{params[:search]}%")
+    end
+    @markers = @offices.map do |office|
       {
         lat: office.latitude,
         lng: office.longitude
       }
-      end
-
     end
   end
 
