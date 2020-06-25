@@ -1,10 +1,26 @@
 class OfficesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
+
   def index
+
     if params[:search].nil? || params[:search] == ""
-      @offices = Office.all
+      @offices = Office.geocoded
+      @markers = @offices.map do |office|
+      {
+        lat: office.latitude,
+        lng: office.longitude
+      }
+      end
+
     else
-      @offices = Office.where("address ILIKE ?", "%#{params[:search]}%")
+      @offices = Office.geocoded.where("address ILIKE ?", "%#{params[:search]}%")
+      @markers = @offices.map do |office|
+      {
+        lat: office.latitude,
+        lng: office.longitude
+      }
+      end
+
     end
   end
 
@@ -18,6 +34,7 @@ class OfficesController < ApplicationController
 
   def create
     @office = Office.new(office_params)
+    @office.owner = current_user
     if @office.save
       redirect_to office_path(@office)
     else
