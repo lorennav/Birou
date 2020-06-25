@@ -31,7 +31,7 @@ end
 
 puts "creating offices"
 office_names = ["Cowork", "Office", "Space"]
-addresses = ["Lisbon", "Porto", "Faro", "Vila Real", "Viseu"]
+addresses = ["Lisbon", "Porto", "Vila Real", "Viseu"]
 10.times do
   office_address = addresses.sample
   office_name = "#{office_names.sample} in #{office_address}"

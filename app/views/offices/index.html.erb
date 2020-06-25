@@ -1,24 +1,27 @@
 
+<div class="flex-container">
 
-<div class="index-container">
-<% if params[:search] == "" || params[:search].nil? %>
-  <h2>Amazing offices </h2>
-  <% else %>
-  <h2>Amazing offices <%= "near #{params[:search].capitalize}" %></h2>
-<% end %>
+  <div class="flex-child magenta">
+    <div class="index-container">
+      <% if params[:search] == "" || params[:search].nil? %>
+      <h2>Amazing offices </h2>
+      <% else %>
+      <h2>Amazing offices <%= "near #{params[:search].capitalize}" %></h2>
+      <% end %>
 
-<div class="results">
-  <% if @offices.nil? %>
-    <p> No offices found </p>
-  <% else %>
-    <% @offices.each do |office| %>
+      <div class="results">
+        <% if @offices.nil? %>
+          <p> No offices found </p>
+        <% else %>
+        <% @offices.each do |office| %>
        <%= link_to office_path(office) do %>
         <div class="card-product">
           <%= cl_image_tag office.photo.key %>
           <div class="card-product-infos">
             <h3> <%= office.name %> </h3>
-            <p> <%= office.address %></p>
+            <p> <strong> <%= office.address %> </strong></p>
             <p> <em> <%= office.description %> </em> </p>
+            <p> <strong> <%= office.price %> </strong>€</p>
           </div>
         </div>
       <% end %>
@@ -26,13 +29,16 @@
   <% end %>
 </div>
 </div>
-
-<div class="map-box">
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-</div>
-
+  </div>
+  
+  <div class="flex-child green">
+    <div class="map-box">
+      <div id="map"
+        style="width: 100%; height: 1100px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+      </div>
+    </div>
+  </div>
 
 
