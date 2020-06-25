@@ -1,6 +1,6 @@
-<div class="container" >
+<div class="edituser-container" style="margin-top: 60px" >
   <div class="row">
-    <div class="col-12 col-lg-8" style="padding-left: 180px;">
+    <div class="col-12">
       <h2>Edit <%= resource_name.to_s.humanize %></h2>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
@@ -26,7 +26,7 @@
                       input_html: { autocomplete: "current-password" } %>
         </div>
         <div class="form-actions">
-          <%= f.button :submit, "Update", class: "btn btn-info" %>
+          <%= f.button :submit, "Update", class: "btn" %>
         </div>
       <% end %>
 <br>
@@ -34,7 +34,7 @@
 
       <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-      <%= link_to "Back", :back%>
+      <%= link_to "Back", :back, :style => 'color: #216869' %>
     </div>
   </div>
 </div>
