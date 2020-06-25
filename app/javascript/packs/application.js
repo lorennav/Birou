@@ -24,6 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import flatpickr from "flatpickr";
 import { initMapbox } from '../plugins/init_mapbox';
 
 // Internal imports, e.g:
@@ -32,5 +33,34 @@ import { initMapbox } from '../plugins/init_mapbox';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+
+
+  const currentDate = new Date();
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth() + 1;
+  const day = currentDate.getDate();
+
+  flatpickr(".date-picker", {
+    altInput: true,
+    time_24hr: true,
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+    minDate: `${year}-${month}-${day + 1}`
+  });
+
   initMapbox();
+
 });
+
+// const currentDate = new Date();
+// const year = currentDate.getFullYear();
+// const month = currentDate.getMonth() + 1;
+// const day = currentDate.getDate();
+
+// flatpickr(".date-picker", {
+//   altInput: true,
+//   time_24hr: true,
+//   enableTime: true,
+//   dateFormat: "Y-m-d H:i",
+//   minDate: `${year}-${month}-${day + 1}`
+// });
