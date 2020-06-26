@@ -30,6 +30,7 @@ import { autocompleteSearch } from '../plugins/autocomplete';
 import { loadDynamicBannerText } from '../components/banner';
 
 const search = document.getElementById('search-data');
+const typed = document.getElementById('banner-typed-text');
 
 document.addEventListener('turbolinks:load', () => {
 
@@ -49,9 +50,15 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
 
   if (search !== null ) {
+    console.log(search);
     autocompleteSearch();
   };
 
+
+if (typed !== null) {
   loadDynamicBannerText();
+};
 
 });
+
+
