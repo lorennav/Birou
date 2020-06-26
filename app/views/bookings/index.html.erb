@@ -5,9 +5,9 @@
   </h2>
   <div class="row-bookings">
     <% @bookings.each do |booking| %>
-      <div class="container">
+      <div class="container-fluid">
         <div class="card">
-          <h5 class="h5a"><%= booking.office.name %></h5>
+          <h5 class="card-title"><%= booking.office.name %></h5>
           <img src="https://dinksystudio.com/wp-content/uploads/2019/09/ligo_klatka4-1024x551.jpg" alt="">
           <p>Start Date:<strong><%= booking.start_date %></strong></p>
           <p>End Date:<strong><%= booking.end_date %></strong></p>
