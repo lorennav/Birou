@@ -4,6 +4,7 @@ import autocomplete from 'js-autocomplete';
 
 const autocompleteSearch = () => {
   const search = document.getElementById('search-data');
+  console.log("Autocomplete:", search)
   if(search) {
     const offices = JSON.parse(document.getElementById('search-data').dataset.offices);
     const searchInput = document.getElementById('search_string');
@@ -12,7 +13,7 @@ const autocompleteSearch = () => {
       new autocomplete({
         selector: searchInput,
         minChars: 1,
-        source: function(term, suggest){
+        source: (term, suggest) => {
             term = term.toLowerCase();
             const choices = offices;
             const matches = [];
