@@ -13,7 +13,7 @@
         <% if @offices.nil? %>
           <p> No offices found </p>
         <% else %>
-        <% @offices.each do |office| %>
+        <% @offices.take(6).each do |office| %>
        <%= link_to office_path(office) do %>
         <div class="card-product">
           <%= cl_image_tag office.photo.key %>
@@ -27,8 +27,8 @@
       <% end %>
     <% end %>
   <% end %>
-</div>
-</div>
+  </div>
+  </div>
   </div>
 
   <div class="flex-child green">
