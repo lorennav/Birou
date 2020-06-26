@@ -28,6 +28,7 @@ import flatpickr from "flatpickr";
 import { initMapbox } from '../plugins/init_mapbox';
 import { autocompleteSearch } from '../plugins/autocomplete';
 import { loadDynamicBannerText } from '../components/banner';
+import 'js-autocomplete/auto-complete.css';
 
 
 document.addEventListener('turbolinks:load', () => {
