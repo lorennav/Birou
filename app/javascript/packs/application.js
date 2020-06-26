@@ -26,7 +26,7 @@ require("channels")
 import "bootstrap";
 import flatpickr from "flatpickr";
 import { initMapbox } from '../plugins/init_mapbox';
-
+import { loadDynamicBannerText } from '../components/banner';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -50,7 +50,10 @@ document.addEventListener('turbolinks:load', () => {
 
   initMapbox();
 
+  loadDynamicBannerText();
+
 });
+
 
 // const currentDate = new Date();
 // const year = currentDate.getFullYear();
