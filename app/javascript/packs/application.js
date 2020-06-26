@@ -29,6 +29,8 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { autocompleteSearch } from '../plugins/autocomplete';
 import { loadDynamicBannerText } from '../components/banner';
 
+const search = document.getElementById('search-data');
+
 document.addEventListener('turbolinks:load', () => {
 
   const currentDate = new Date();
@@ -46,7 +48,9 @@ document.addEventListener('turbolinks:load', () => {
 
   initMapbox();
 
-  autocompleteSearch();
+  if (search !== null ) {
+    autocompleteSearch();
+  };
 
   loadDynamicBannerText();
 
