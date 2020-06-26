@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :bookings
   has_many :offices, foreign_key: :owner_id, class_name: "Office"
+  has_one_attached :photo
 
   validates :name, presence: true
 end

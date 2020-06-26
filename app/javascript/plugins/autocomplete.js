@@ -1,6 +1,7 @@
 import 'js-autocomplete/auto-complete.css';
 import autocomplete from 'js-autocomplete';
 
+
 const autocompleteSearch = () => {
   const search = document.getElementById('search-data');
   if(search) {
