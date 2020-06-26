@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     end_date = params[:booking][:end_date]
     booking = Booking.new(start_date: start_date, end_date: end_date, office: office, category: category, user: user)
     if booking.save
-      redirect_to office
+      redirect_to bookings_path
     else
       redirect_to new_office_booking_path(office)
     end
