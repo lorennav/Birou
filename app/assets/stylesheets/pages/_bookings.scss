@@ -1,0 +1,28 @@
+
+.banner {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+p {
+  margin-top: 5px;
+}
+
+img {
+  margin-bottom: 5px;
+}
+
+.h2a {
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 3px;
+  margin: -70px 0 15px;
+}
+
+.row-bookings {
+  display: flex;
+}
