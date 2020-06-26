@@ -1,4 +1,4 @@
-<h1>Book <%= @office.name %></h1>
+<h2><%= @office.name %> booking</h2>
 
 
 <%= simple_form_for [@office, @booking],:url => office_bookings_path(@office), method: method do |f| %>
