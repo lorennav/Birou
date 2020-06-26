@@ -36,6 +36,17 @@ class OfficesController < ApplicationController
     end
   end
 
+  def edit
+    @office = Office.find(params[:id])
+  end
+
+  def update
+    @office = Office.find(params[:id])
+    @office.update(office_params)
+
+    redirect_to office_path(@office)
+  end
+
   private
 
   def search_params

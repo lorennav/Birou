@@ -13,7 +13,6 @@ const autocompleteSearch = function() {
           term = term.toLowerCase();
           const choices = offices;
           const matches = [];
-          console.log("choi", choices[1])
           for (let i = 0; i < choices.length; i++)
               if (~choices[i].toLowerCase().indexOf(term)) matches.push(choices[i]);
           suggest(matches);
