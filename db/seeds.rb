@@ -31,10 +31,12 @@ end
 
 puts "creating offices"
 office_names = ["Cowork", "Office", "Space"]
-addresses = ["Lisbon", "Porto", "Vila Real", "Viseu"]
-10.times do
+colors = ["Green", "Blue", "Yellow", "White", "Red"]
+addresses = ["Lisbon, Portugal", "Porto, Portugal", "Vila Real, Portugal", "Viseu, Portugal", "Barcelona, Spain", "Valencia, Spain", "Madrid, Spain"]
+20.times do
   office_address = addresses.sample
-  office_name = "#{office_names.sample} in #{office_address}"
+  # office_name = "#{office_names.sample} in #{office_address}"
+  office_name = "#{colors.sample} #{office_names.sample}"
 
   office = Office.new(name: office_name, address: office_address, description: Faker::Lorem.sentence(word_count: 10), price: rand(100..10000), owner: User.all.sample)
 
@@ -45,7 +47,19 @@ addresses = ["Lisbon", "Porto", "Vila Real", "Viseu"]
   office.save
 end
 
-category = ["visit", "rent"]
+################ Can you please add this also ####################
+##### If you agree. The map will show Romania also.
+office = Office.new(name: "Office Space Darius", address: "Arad, Zimandu-Nou", description: "Only the most gracious office-cave.", price: 1999, owner: User.all.sample)
+
+file = URI.open('https://i.pinimg.com/originals/2c/e0/eb/2ce0eb3fa4ae5226ec7534a1a8d4b44c.jpg')
+office.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
+puts "Creating #{office.name}"
+office.save
+
+###################################################
+
+category = ["Visit", "Rent"]
 puts "creating bookings"
 100.times do
   office = Office.all.sample
@@ -58,5 +72,5 @@ puts "creating bookings"
   puts "#{booking.user.name} has booked #{booking.office.name}"
   booking.save
 end
-puts "finished"
 
+puts "finished"
