@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   </head>
 
-  <body>
+  <body class="<%= controller_name %> <%= action_name %>">
     <%= render 'shared/navbar' %>
     <% if action_name == 'home' && controller_name == 'pages' || action_name == 'index' && controller_name == 'offices' || action_name == 'show' && controller_name == 'offices' %>
       <%= yield %>
