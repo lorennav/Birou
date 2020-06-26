@@ -26,6 +26,7 @@ require("channels")
 import "bootstrap";
 import flatpickr from "flatpickr";
 import { initMapbox } from '../plugins/init_mapbox';
+import { autocompleteSearch } from '../plugins/autocomplete';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -49,7 +50,7 @@ document.addEventListener('turbolinks:load', () => {
   });
 
   initMapbox();
-
+  autocompleteSearch();
 });
 
 // const currentDate = new Date();
@@ -64,3 +65,8 @@ document.addEventListener('turbolinks:load', () => {
 //   dateFormat: "Y-m-d H:i",
 //   minDate: `${year}-${month}-${day + 1}`
 // });
+
+// const search = document.querySelector("#search")
+// search.addEventListener('keyup', (evt) => {
+//   console.log(search.value)
+// })

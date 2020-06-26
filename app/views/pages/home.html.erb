@@ -2,10 +2,12 @@
   <div class="container">
     <div class="content">
       <h1>Discover a place you’ll love to work</h1>
+
       <%= simple_form_for :search, url: offices_path, method: :get do |f| %>
-        <div class="search-form-control form-group">
-          <input class="form-control string required" type="text" name="search" id="search" />
-          <button name="button" type="submit" class="btn btn-flat">
+
+        <div class="search-form-control form-group" data-offices="<%= @offices.to_json %>" id="search-data">
+          <input class="form-control string required" type="text" name="search" id="search_string" />
+          <button type="submit" class="btn btn-flat">
             <i class="fas fa-search"></i> Search
           </button>
         </div>

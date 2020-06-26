@@ -1,0 +1,26 @@
+
+<!--
+      <%= simple_form_for :search, url: offices_path, method: :get do |f| %>
+
+         <div class="search-form-control form-group" data-offices="<%= @offices.to_json %>" id="search">
+          <%= f.input :string, class: "form-control string required", label: false %>
+            <%= button_tag(type: 'submit', class: "btn btn-primary"), name: nil, hide_attribute_name: true do %>
+              <i class="icon-ok icon-white"></i> Save
+            <% end %>
+
+          <input class="form-control string required" type="text" name="search" id="search" />
+          <button type="submit" class="btn btn-flat">
+            <i class="fas fa-search"></i> Search
+          </button>
+        </div>
+      <% end %>
+      -->
+<%= form_with(url: offices_path, method: :get) do %>
+          <%= text_field_tag "search", html: { class: "form-control string required"} %>
+          <%= submit_tag("Search") %>
+        <% end %>
+
+
+  <%= f.input :string, input_html: { name: :search, class: "form-control string required" }, label: false, data:
+  {autocomplete_source: offices_path} %>
+  <%= f.submit :search, name: nil, hide_attribute_name: true, class: "btn btn-flat" %>

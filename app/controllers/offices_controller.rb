@@ -2,6 +2,7 @@ class OfficesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[show index]
 
   def index
+
     if params[:search].nil? || params[:search] == ""
       @offices = Office.geocoded
     else
@@ -36,6 +37,10 @@ class OfficesController < ApplicationController
   end
 
   private
+
+  def search_params
+    params.require(:search).permit(:search)
+  end
 
   def office_params
     params.require(:office).permit(:name, :address, :description, :price, :photo)

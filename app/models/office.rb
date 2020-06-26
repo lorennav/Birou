@@ -14,8 +14,11 @@ class Office < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :search_by_full_name, against: {
-    name: 'A',
-    address: 'B',
+    address: 'A',
+    name: 'B',
     description: 'C'
+  },
+  using: {
+    tsearch: { prefix: true }
   }
 end

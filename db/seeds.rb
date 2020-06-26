@@ -24,17 +24,19 @@ Booking.destroy_all
 Office.destroy_all
 # User.destroy_all
 
-puts "creating users"
-20.times do
-  User.create(name: Faker::Name.name, email: Faker::Internet.email , password: "123456")
-end
+# puts "creating users"
+# 20.times do
+#   User.create(name: Faker::Name.name, email: Faker::Internet.email , password: "123456")
+# end
 
 puts "creating offices"
 office_names = ["Cowork", "Office", "Space"]
+colors = ["Green", "Blue", "Yellow", "White", "Red"]
 addresses = ["Lisbon, Portugal", "Porto, Portugal", "Vila Real, Portugal", "Viseu, Portugal", "Barcelona, Spain", "Valencia, Spain", "Madrid, Spain"]
-10.times do
+20.times do
   office_address = addresses.sample
-  office_name = "#{office_names.sample} in #{office_address}"
+  # office_name = "#{office_names.sample} in #{office_address}"
+  office_name = "#{colors.sample} #{office_names.sample}"
 
   office = Office.new(name: office_name, address: office_address, description: Faker::Lorem.sentence(word_count: 10), price: rand(100..10000), owner: User.all.sample)
 
