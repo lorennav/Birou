@@ -65,8 +65,3 @@ document.addEventListener('turbolinks:load', () => {
 //   dateFormat: "Y-m-d H:i",
 //   minDate: `${year}-${month}-${day + 1}`
 // });
-
-// const search = document.querySelector("#search")
-// search.addEventListener('keyup', (evt) => {
-//   console.log(search.value)
-// })

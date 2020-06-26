@@ -22,12 +22,12 @@ require "open-uri"
 
 Booking.destroy_all
 Office.destroy_all
-# User.destroy_all
+User.destroy_all
 
-# puts "creating users"
-# 20.times do
-#   User.create(name: Faker::Name.name, email: Faker::Internet.email , password: "123456")
-# end
+puts "creating users"
+20.times do
+  User.create(name: Faker::Name.name, email: Faker::Internet.email , password: "123456")
+end
 
 puts "creating offices"
 office_names = ["Cowork", "Office", "Space"]
