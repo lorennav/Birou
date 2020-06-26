@@ -8,11 +8,14 @@
       <div class="container-fluid">
         <div class="card">
           <h5 class="card-title"><%= booking.office.name %></h5>
-          <img src="https://dinksystudio.com/wp-content/uploads/2019/09/ligo_klatka4-1024x551.jpg" alt="">
+          <%= cl_image_tag booking.office.photo.key %>
           <p>Start Date:<strong><%= booking.start_date %></strong></p>
           <p>End Date:<strong><%= booking.end_date %></strong></p>
           <p><strong><%= booking.category %></strong></p>
-           <a href="#" class="btn btn-flat">Edit</a>
+          <!--  <a href="#" class="btn btn-flat">Edit</a> -->
+          <div class="btn btn-flat">
+           <%= link_to "Edit", edit_office_booking_path(booking.office.id, booking) %>
+           </div>
         </div>
       </div>
     <% end %>

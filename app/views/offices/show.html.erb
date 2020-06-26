@@ -55,7 +55,7 @@
     <div class="booking-form">
     <% if user_signed_in? %>
       <% unless current_user == @office.owner %>
-      <%= render 'bookings/new_booking_form' %>
+      <%= render 'bookings/new_booking_form', method: :POST %>
       <% end %>
     <% else %>
       <div class="nav-item active login">

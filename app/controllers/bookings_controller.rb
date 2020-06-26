@@ -23,11 +23,25 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    @office = Office.find(params[:office_id])
+    @booking = Booking.find(params[:id])
   end
 
   def update
+    @booking = Booking.find(params[:id])
+    if @booking.update(booking_params)
+      redirect to @booking
+    end
   end
 
   def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to bookings_url
+  end
+
+  private
+  def booking_params
+    params.require(:booking).permit(:office_id, :start_date, :end_date, :category, :user)
   end
 end
